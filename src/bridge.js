@@ -106,7 +106,7 @@ function publishPlaybackStatus(newState, extraData = {}) {
         .then(res => res.text())
         .then(body => xmlParser.parse(body))
         .catch(err => {
-          log.error(err);
+          log.debug(err);
           return undefined;
         }),
     () => true,
@@ -127,7 +127,7 @@ function publishPlaybackStatus(newState, extraData = {}) {
     const { currentStatus, currentTime, title, totalTime } = response;   // pause | play
 
     if (!['play', 'pause'].includes(currentStatus)) {
-      log.info(`Received unsupported status ${currentStatus}; ignoring`);
+      log.debug(`Received unsupported status ${currentStatus}; ignoring`);
       return;
     }
 
@@ -143,5 +143,5 @@ function publishPlaybackStatus(newState, extraData = {}) {
 
     lastStatus = currentStatus;
 
-  }, err => log.error(err))
+  }, err => log.debug(err))
 })();
