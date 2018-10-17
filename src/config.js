@@ -1,9 +1,8 @@
-import yargs from 'yargs';
-
-export default yargs
+const config = require('yargs')
   .env('POPCORN2MQTT')
   .usage('Usage: $0 [options]')
   .describe('p', 'IP address or host name of the Popcorn Hour device')
+  .describe('i', 'Sets the polling interval (ms)')
   .describe('h', 'Show this help')
   .describe('l', 'Logging level')
   .describe('m', 'MQTT broker url. See https://github.com/mqttjs/MQTT.js#connect-using-a-url')
@@ -12,6 +11,7 @@ export default yargs
   .boolean('k')
   .alias({
     p: 'popcornhour',
+    i: 'interval',
     g: 'password',
     h: 'help',
     l: 'logging',
@@ -22,11 +22,14 @@ export default yargs
   .choices('l', ['error', 'warn', 'info', 'debug'])
   .default({
     l: 'info',
+    i: 1000,
     m: 'mqtt://127.0.0.1',
     k: false,
-    n: 'popcornhour'
+    n: 'popcorn-hour'
   })
   .version()
   .help('help')
   .wrap(null)
   .argv;
+
+  module.exports = config;
