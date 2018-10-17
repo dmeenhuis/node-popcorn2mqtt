@@ -115,11 +115,12 @@ function publishPlaybackStatus(newState, extraData = {}) {
     if (!data) return;
 
     const { theDavidBox: { response } } = data;
+    const stop = 'stop';
 
-    if (response === '') {
+    if (response === '' && lastStatus !== stop) {
       // Empty response; apparently nothing is playing
-      publishPlaybackStatus('stop');
-      lastStatus = 'stop';
+      publishPlaybackStatus(stop);
+      lastStatus = stop;
       return;
     }
 
