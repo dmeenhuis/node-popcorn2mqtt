@@ -1,0 +1,43 @@
+{
+  "name": "popcorn2mqtt",
+  "version": "0.0.1",
+  "description": "A bridge between a Popcorn Hour media player and an MQTT broker\"",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmeenhuis/node-popcorn2mqtt.git"
+  },
+  "keywords": [
+    "mqtt",
+    "popcorn hour",
+    "home automation",
+    "mqtt-smarthome"
+  ],
+  "author": "Dennis Meenhuis <github@dennus.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmeenhuis/node-popcorn2mqtt/issues"
+  },
+  "homepage": "https://github.com/dmeenhuis/node-popcorn2mqtt#readme",
+  "dependencies": {
+    "fast-xml-parser": "^3.12.5",
+    "mqtt": "^2.18.8",
+    "node-fetch": "^2.2.0",
+    "rxjs": "^6.3.3",
+    "yalm": "^4.1.0",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "nodemon": "^1.18.4"
+  }
+}
