@@ -2,7 +2,7 @@
 
 [![mqtt-smarthome](https://img.shields.io/badge/mqtt-smarthome-blue.svg)](https://github.com/mqtt-smarthome/mqtt-smarthome)
 [![Build Status](https://travis-ci.org/dmeenhuis/node-popcorn2mqtt.svg?branch=master)](https://travis-ci.org/dmeenhuis/node-popcorn2mqtt)
-[![License][mit-badge]][mit-url]
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 > Gateway between a Popcorn Hour media player and MQTT
 
