@@ -60,7 +60,7 @@ function publishPlaybackStatus(newState, extraData = {}) {
   )
 }
 
-(async () => {
+(() => {
   log.setLevel(config.logging);
 
   const mqttOptions = {
