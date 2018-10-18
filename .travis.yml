@@ -1,0 +1,24 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - "10"
+
+services:
+  - docker
+
+before_script:
+  - docker pull dmeenhuis/popcorn2mqtt || true
+
+script:
+  - docker build --pull --cache-from dmeenhuis/popcorn2mqtt --tag dmeenhuis/popcorn2mqtt .
+
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+deploy:
+  provider: script
+  script: docker push dmeenhuis/popcorn2mqtt
+  on:
+    branch: master
