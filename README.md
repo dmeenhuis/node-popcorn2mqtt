@@ -24,7 +24,7 @@ Albeit this being a fairly crude approach (it uses polling at a given interval t
 
 ### Install
 
-Prerequisites: [Node.js](https://nodejs.org) >= 10.0
+Prerequisites: [Node.js](https://nodejs.org) >= 7
 
 #### Docker
 
