@@ -18,7 +18,7 @@ Albeit this being a fairly crude approach (it uses polling at a given interval t
 
 * Maybe have some sort of scheduler in place, that for example only tells it to check the endpoint in the evening;
 * Have a look at the other API endpoints for perhaps more interesting stuff.
-
+* Allow for control of the Popcorn Hour device from Home Assistant
 
 ## Getting started
 
